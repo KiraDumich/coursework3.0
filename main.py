@@ -39,7 +39,7 @@ def post_page(postid):
 
 
 # поиск
-@app.route('Get/search/?s=')
+@app.route('/Get/search/?s=')
 def search_page():
     query = request.args["s"]
     found_posts = search_for_posts(query)
@@ -82,5 +82,5 @@ def error_505(error_code):
 
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    app.run(debug=True)
 
