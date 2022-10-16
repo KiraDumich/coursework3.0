@@ -39,7 +39,7 @@ def post_page(postid):
 
 
 # поиск
-@app.route('/Get/search/?s=')
+@app.route('/search/')
 def search_page():
     query = request.args["s"]
     found_posts = search_for_posts(query)
