@@ -55,6 +55,7 @@ def user_page(username):
     return render_template('user-feed.html', posts_user=posts_user, username=username)
 
 
+# поиск поста
 @app.route('/api/posts')
 def page_api_all_posts():
     posts = get_posts_all()
@@ -62,6 +63,7 @@ def page_api_all_posts():
     return jsonify(posts)
 
 
+# поиск поста по id
 @app.route('/api/posts/<int:post_id>')
 def page_api_post_id(post_id):
     post = get_post_by_pk(post_id)
@@ -69,12 +71,14 @@ def page_api_post_id(post_id):
     return jsonify(post)
 
 
+# ошибка 505
 @app.errorhandler(404)
 def error_404(error_code):
     print(f'Возникла ошибка {error_code}')
     return 'Страница, которую вы искали, не существует, код ошибки - 404'
 
 
+# ошибка 505
 @app.errorhandler(505)
 def error_505(error_code):
     print(f'Возникла ошибка {error_code}')

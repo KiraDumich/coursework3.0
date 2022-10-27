@@ -50,7 +50,6 @@ def get_comments_count(pk):
 
 # возвращает список постов по ключевому слову
 def search_for_posts(query):
-    """Возвращает список постов по ключевому слову"""
     posts = get_posts_all()
     posts_query = []
     for post in posts:
