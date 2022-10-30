@@ -21,9 +21,9 @@ def get_posts_by_user(user_name):
     for post in posts:
         if post['poster_name'].lower() == user_name.lower():
             posts_user.append(post)
-            return posts_user
-        else:
-            return ValueError
+    if not posts_user:
+        return ValueError
+    return posts_user
 
 
 # возвращает комментарии определенного поста
@@ -33,9 +33,7 @@ def get_comments_by_post_id(post_id):
     for comment in comments:
         if comment['post_id'] == post_id:
             comments_id.append(comment)
-            return comments_id
-        else:
-            return ValueError
+    return comments_id
 
 
 # считает количество постов

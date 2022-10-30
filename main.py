@@ -1,6 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from utils import get_posts_all, get_comments_by_post_id, get_comments_count, search_for_posts
-from utils import get_posts_by_user, get_post_by_pk
+from utils import get_posts_all, get_comments_by_post_id, get_comments_count, search_for_posts, get_post_by_pk, get_posts_by_user
 import logging
 
 
@@ -33,7 +32,7 @@ def index_page():
 @app.route('/posts/<int:postid>')
 def post_page(postid):
     comments = get_comments_by_post_id(postid)
-    posts = get_posts_all()
+    posts = get_post_by_pk(postid)
     count_comments = get_comments_count(postid)
     return render_template('post.html', posts=posts, comments=comments, pk=postid, count_comments=count_comments)
 
@@ -72,10 +71,10 @@ def page_api_post_id(post_id):
 
 
 # ошибка 505
-@app.errorhandler(404)
-def error_404(error_code):
-    print(f'Возникла ошибка {error_code}')
-    return 'Страница, которую вы искали, не существует, код ошибки - 404'
+#@app.errorhandler(404)
+#def error_404(error_code):
+    #print(f'Возникла ошибка {error_code}')
+    #return 'Страница, которую вы искали, не существует, код ошибки - 404'
 
 
 # ошибка 505

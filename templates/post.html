@@ -41,7 +41,7 @@
           </button>
         </div>
         <a href="" class="item__post-link">
-          <img src="img/post1.jpg" alt="" width="348" class="item__post-img">
+          <img src={{post.pic}} alt="" width="348" class="item__post-img">
         </a>
         <div class="item__descr">
           <p class="item__text">
@@ -54,7 +54,7 @@
             <p class="item__comments-counter">{{ count_comments }} комментария</p>
             <div class="item__counter">
               <img src="img/eye.png" alt="" class="item__counter-icon" width="26">
-              <span class="item__counter-text">1023</span>
+              <span class="item__counter-text">{{post.views_count}}</span>
             </div>
           </div>
           {% endif %}
@@ -65,7 +65,7 @@
               <b>{{ comment.commenter_name }}</b> {{ comment.comment }}
             </p>
           </div>
-          {% endfor %
+          {% endfor %}
           </div>
         </div>
 
