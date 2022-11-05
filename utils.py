@@ -4,8 +4,11 @@ import json
 
 # возвращает пост
 def get_posts_all():
-    with open('data/posts.json', 'r', encoding='utf-8') as file:
-        return json.load(file)
+    try:
+        with open('data/posts.json', 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except:
+        print('Error')
 
 
 # возвращает комментарии
@@ -51,11 +54,11 @@ def search_for_posts(query):
     posts = get_posts_all()
     posts_query = []
     for post in posts:
-        if query not in post:
-            return "нет такого поста"
-        elif query in post:
+        if query.lower() in post['content'].lower():
             posts_query.append(post)
-        return posts_query
+        elif not posts_query:
+            return 'Не найдено постов'
+    return posts_query
 
 
 # возвращает один пост по его идентификатору.

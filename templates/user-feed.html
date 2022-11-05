@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SKYPROGRAM user feed</title>
-  <link href="/static/css/styles.min.css" rel="stylesheet">
+  <link href="../static/css/styles.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,12 +21,12 @@
       </a>
     </div>
   </header>
-{% for post in posts_user %}
   <main class="container">
-    <section class="items">
-      <div class="items__item item">
+   <section class="items">
+    <div class="items__item item">
+     {% for post in posts_user %}
         <div class="item__top">
-          <a href="/user/{{ post.poster_name }}" class="item__head">
+          <a href="/posts.json/{{ post.poster_name }}" class="item__head">
             <div class="item__ava-wrap">
               <img src="{{ post.poster_avatar }}" alt="" class="item__ava" width="47">
             </div>
@@ -36,21 +36,22 @@
         <a href="/posts/{{ post.pk }}" class="item__post-link">
           <img src="{{ post.pic }}" alt="" width="348" class="item__post-img">
         </a>
-        <p class="item__descr"><a href="#" class="item__tag">#food</a>{{ post.content[:60] }}</p>
+        <p class="item__descr"><a href="#" class="item__tag">#food</a>{{ (post.content[0:60]) }}...
         <div class="item__post-info">
-          <div class="item__counter">
-            <img src="/static/img/eye.png" alt="" class="item__counter-icon" width="26">
+          <div class="item__comments-counter">{{post.comments}} комментариев</p>
+            <div class="item__counter">
+            <img src="../static/img/eye.png" alt="" class="item__counter-icon" width="26">
             <span class="item__counter-text">{{  post.views_count }}</span>
           </div>
         </div>
         <div class="item__post-bottom">
           <a href="/posts/{{ post.pk }}" class="item__btn-more">Подробнее</a>
           <button type="button" class="item__bookmark-btn">
-            <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
+            <img src="../static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
           </button>
         </div>
       </div>
-    </section>
+       </section>
   </main>
 {% endfor %}
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
