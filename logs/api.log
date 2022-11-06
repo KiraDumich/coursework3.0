@@ -1159,3 +1159,7 @@ INFO:werkzeug:127.0.0.1 - - [05/Nov/2022 16:42:06] "GET /search/?s=à HTTP/1.1" 2
 INFO:werkzeug:127.0.0.1 - - [05/Nov/2022 16:42:06] "[36mGET /static/css/styles.min.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [05/Nov/2022 16:42:06] "[36mGET /static/img/eye.png HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [05/Nov/2022 16:42:06] "[36mGET /static/img/bookmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\79244\\PycharmProjects\\coursework3\\utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 226-699-496
