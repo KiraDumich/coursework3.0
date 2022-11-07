@@ -56,8 +56,6 @@ def search_for_posts(query):
     for post in posts:
         if query.lower() in post['content'].lower():
             posts_query.append(post)
-        elif not posts_query:
-            return 'Не найдено постов'
     return posts_query
 
 
