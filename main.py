@@ -32,9 +32,9 @@ def index_page():
 @app.route('/posts/<int:postid>')
 def post_page(postid):
     comments = get_comments_by_post_id(postid)
-    posts = get_post_by_pk(postid)
+    post = get_post_by_pk(postid)
     count_comments = get_comments_count(postid)
-    return render_template('post.html', posts=posts, comments=comments, pk=postid, count_comments=count_comments)
+    return render_template('post.html', post=post, comments=comments, pk=postid, count_comments=count_comments)
 
 
 # поиск
