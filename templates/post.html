@@ -28,7 +28,7 @@
         <section class="items">
          <div class="items__item item item--post">
            <div class="item__top">
-             <a href="/user-feed.html" class="item__head">
+             <a href="/user/{{post.poster_name}}" class="item__head">
                <div class="item__ava-wrap">
                  <img src="{{post.poster_avatar}}" alt="" class="item__ava" width="47">
              </div>
@@ -38,7 +38,7 @@
             <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
           </button>
         </div>
-        <a href="/static/css/styles.min.css" class="item__post-link">
+        <a href="/posts/1" class="item__post-link">
           <img src={{post.pic}} alt="" width="348" class="item__post-img">
         </a>
         <div class="item__descr">
