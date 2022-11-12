@@ -23,6 +23,7 @@
   </header>
   <main class="container">
       {% for post in posts_user %}
+      <section>
     <div class="items__item item">
         <div class="item__top">
           <a href="/user/{{ post.poster_name }}" class="item__head">
@@ -49,7 +50,7 @@
           </button>
         </div>
       </div>
-  </main>
+    </main>
   </section>
       {% endfor %}
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
